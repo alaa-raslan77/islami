@@ -9,7 +9,8 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold( appBar: AppBar(
 
-      title: Text("islami "),
+
+      title: Text("islami ",style: TextStyle(color: Colors.black,fontSize: 30),),
     ),);
   }
 }
