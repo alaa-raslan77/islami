@@ -25,33 +25,25 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Image.asset("assets/images/main_bg.png")
         ,Scaffold(
-          backgroundColor: Colors.transparent,
+
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
           centerTitle: true,
-          title: Text("Islami",style:GoogleFonts.elMessiri(
-            fontSize: 30,fontWeight: FontWeight.bold
-          ) ,),
+          title: Text("Islami" ,),
         ),
           bottomNavigationBar:
           BottomNavigationBar(
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            type: BottomNavigationBarType.shifting,
-            backgroundColor: Color(0xffB7935F),
-            selectedItemColor: Colors.black,
-            unselectedItemColor: Colors.white,
+
             currentIndex: selectedIndex,
             onTap:(index) {
               selectedIndex=index;
               setState(() {});
             },
-            items: [
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/moshaf_blue.png")),label: "Moshaf",backgroundColor: Color(0xffB7935F)),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/sebha.png")),label: "Sepha",backgroundColor: Color(0xffB7935F)),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/radio.png")),label: "Radio",backgroundColor:Color(0xffB7935F) ),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),label: "Ahadeth",backgroundColor: Color(0xffB7935F)),
-            BottomNavigationBarItem(icon: Icon(Icons.settings),label: "settings",backgroundColor:Color(0xffB7935F)),
+            items: const [
+              BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/moshaf_blue.png")),label: "Moshaf"),
+              BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/sebha.png")),label: "Sepha"),
+              BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/radio.png")),label: "Radio" ),
+              BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),label: "Ahadeth"),
+            BottomNavigationBarItem(icon: Icon(Icons.settings),label: "settings"),
 
           ],),
           body: tabs[selectedIndex],
@@ -63,9 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   List<Widget> tabs=[
     QuranTab(),
-    AhadethTab(),
-    RadioTab(),
     SebbhaTab(),
+    RadioTab(),
+    AhadethTab(),
     SettingsTab(),
   ];
 

@@ -27,9 +27,8 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
           title: Text(model.name,style: GoogleFonts.elMessiri(fontSize: 30,fontWeight: FontWeight.w700),),
          centerTitle: true,
           iconTheme: IconThemeData(

@@ -23,30 +23,24 @@ class QuranTab extends StatelessWidget {
       children: [
 
         Image.asset("assets/images/home_logo.png",height: 227,)
-        ,Divider(
-          thickness: 3,
-          color: Color(0xffB7935F),
-        ),
+        ,Divider(),
     Text("sura names",textAlign: TextAlign.center,style: GoogleFonts.elMessiri(fontSize: 25,fontWeight: FontWeight.w600),),
-    Divider(
-    thickness: 3,
-    color: Color(0xffB7935F),
-    ),
+    Divider(),
         Expanded(
           child: ListView.separated(
           separatorBuilder: (context, index) => Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(child: Icon(Icons.star,color: Color(0xffB7935F),)),
+              Expanded(child: Icon(Icons.star)),
               Expanded(
                 flex: 2,
                 child: Divider(
                   thickness: 2,
-                  color: Color(0xffB7935F),
+
                 
                 ),
               ),
-              Expanded(child: Icon(Icons.star,color: Color(0xffB7935F),))
+              Expanded(child: Icon(Icons.star))
             ],
           ),
             itemBuilder: (context, index) {
@@ -57,7 +51,7 @@ class QuranTab extends StatelessWidget {
                     arguments:SuraModel(name: SuraNames[index], index: index) );
               },
               child: Text(SuraNames[index],textAlign: TextAlign.center,
-                  style: GoogleFonts.elMessiri(fontSize: 25,fontWeight: FontWeight.w600)),
+                  style:Theme.of(context).textTheme.bodyMedium),
             );
           },
             itemCount: SuraNames.length,
