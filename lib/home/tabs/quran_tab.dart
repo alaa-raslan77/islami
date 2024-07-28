@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/sura_details_screen.dart';
@@ -24,7 +25,7 @@ class QuranTab extends StatelessWidget {
 
         Image.asset("assets/images/home_logo.png",height: 227,)
         ,Divider(),
-    Text("sura names",textAlign: TextAlign.center,style: GoogleFonts.elMessiri(fontSize: 25,fontWeight: FontWeight.w600),),
+    Text("sura_names".tr(),textAlign: TextAlign.center,style: GoogleFonts.elMessiri(fontSize: 25,fontWeight: FontWeight.w600),),
     Divider(),
         Expanded(
           child: ListView.separated(

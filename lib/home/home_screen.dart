@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/home/tabs/ahadeth_tab.dart';
@@ -5,6 +6,9 @@ import 'package:islami_app/home/tabs/quran_tab.dart';
 import 'package:islami_app/home/tabs/radio_tab.dart';
 import 'package:islami_app/home/tabs/sebha_tab.dart';
 import 'package:islami_app/home/tabs/settings_tab.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/my_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName ="home";
@@ -20,15 +24,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
+
 
     return Stack(
       children: [
-        Image.asset("assets/images/main_bg.png")
+        Image.asset(
+            provider.appTheme==ThemeMode.dark?
+                "assets/images/main_dark_bg.png"
+                :
+            "assets/images/main_bg.png")
         ,Scaffold(
 
           appBar: AppBar(
           centerTitle: true,
-          title: Text("Islami" ,),
+          title: Text("islami".tr() ,),
         ),
           bottomNavigationBar:
           BottomNavigationBar(
