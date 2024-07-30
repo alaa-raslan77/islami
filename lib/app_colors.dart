@@ -6,4 +6,5 @@ class AppColors{
   static const PrimaryDark  =Color(0xff141A2E);
   static const YellowColor  =Color(0xFFFACC1D);
 
+
 }
