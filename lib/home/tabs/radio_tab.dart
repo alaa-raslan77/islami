@@ -24,7 +24,7 @@ class RadioTab extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.skip_previous,
+            IconButton(onPressed: () {}, icon: Icon(Icons.skip_next,
               size: 60,color:     pro.appTheme==ThemeMode.dark?
               AppColors.YellowColor
                   :
@@ -41,7 +41,7 @@ class RadioTab extends StatelessWidget {
 
             SizedBox(width: 20,),
 
-            IconButton(onPressed: () {}, icon: Icon(Icons.skip_next,size: 60,
+            IconButton(onPressed: () {}, icon: Icon(Icons.skip_previous,size: 60,
               color:     pro.appTheme==ThemeMode.dark?
               AppColors.YellowColor
                   :
