@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 import 'my_app.dart';
 
 void main() async {
+
+
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(MultiProvider(providers: [
