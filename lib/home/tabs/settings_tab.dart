@@ -37,10 +37,10 @@ class SettingsTab extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24),
                border: Border.all(color: Theme.of(context).primaryColor)
               ) ,
-                child: Text(pro.appTheme==ThemeMode.dark?"dark".tr():"light".tr(),style: Theme.of(context)?.textTheme.bodyMedium,)),
+                child: Text(pro.appTheme==ThemeMode.dark?"dark".tr():"light".tr(),style: Theme.of(context).textTheme.bodyMedium,)),
           ),
           SizedBox(height: 30,),
-          Text("language".tr(),style: Theme.of(context)?.textTheme.bodyLarge,),
+          Text("language".tr(),style: Theme.of(context).textTheme.bodyLarge,),
           SizedBox(height: 15,),
           GestureDetector(
             onTap: () {
@@ -61,7 +61,7 @@ class SettingsTab extends StatelessWidget {
                 child: Text(currentLocal==Locale("en")?
                     "english".tr()
                     :
-               "arabic".tr(),style: Theme.of(context)?.textTheme.bodyMedium)),
+               "arabic".tr(),style: Theme.of(context).textTheme.bodyMedium)),
           )
         ],
       ),

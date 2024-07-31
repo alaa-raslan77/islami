@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_colors.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/my_provider.dart';
 
 class SebbhaTab extends StatefulWidget {
   const SebbhaTab({super.key});
@@ -20,6 +23,8 @@ class _SebbhaTabState extends State<SebbhaTab> {
   double angle =0;
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProvider>(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -28,7 +33,10 @@ class _SebbhaTabState extends State<SebbhaTab> {
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 220),
-              child: Image.asset("assets/images/seb7a_head.png"),
+              child: Image.asset(pro.appTheme==ThemeMode.dark?
+              "assets/images/seb7a_head_dark.png"
+                  :
+                  "assets/images/seb7a_head.png"),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 65),
@@ -40,7 +48,10 @@ class _SebbhaTabState extends State<SebbhaTab> {
 
 
                   },
-                    child: Image.asset("assets/images/seb7a_body.png")),
+                    child: Image.asset(pro.appTheme==ThemeMode.dark?
+                    "assets/images/seb7a_body_dark.png"
+                        :
+                    "assets/images/seb7a_body.png")),
               ),
             ),
           ],
@@ -58,7 +69,10 @@ class _SebbhaTabState extends State<SebbhaTab> {
             child: Container(
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Color(0xffc9b496),
+                color: pro.appTheme==ThemeMode.dark?
+                AppColors.PrimaryDark
+        :
+                Color(0xffc9b496),
                 borderRadius: BorderRadius.circular(25)
               ),
               child: Text("$counter",),
@@ -73,7 +87,11 @@ class _SebbhaTabState extends State<SebbhaTab> {
               height: 70,
               //padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                  color: AppColors.Primary,
+                  color:
+                  pro.appTheme==ThemeMode.dark?
+                 AppColors.YellowColor
+                      :
+                  AppColors.Primary,
                   borderRadius: BorderRadius.circular(50)
               ),
               child: Padding(

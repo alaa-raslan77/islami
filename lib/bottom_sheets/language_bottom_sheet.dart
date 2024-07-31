@@ -18,7 +18,10 @@ class LanguageBottomSheet extends StatelessWidget {
       height: MediaQuery.of(context).size.height*.5,
 
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: provider.appTheme==ThemeMode.dark?
+          AppColors.PrimaryDark
+              :
+          Colors.white,
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(20),
               topLeft: Radius.circular(20)
@@ -47,6 +50,9 @@ class LanguageBottomSheet extends StatelessWidget {
                       textTheme.bodyMedium?.
                       copyWith(color: currentLocal==Locale("ar")?
                       AppColors.Primary
+                          :
+                      provider.appTheme==ThemeMode.dark?
+                      Colors.white
                           :
                       Colors.black),),
                     currentLocal==Locale("ar")?
@@ -78,6 +84,9 @@ class LanguageBottomSheet extends StatelessWidget {
                     textTheme.bodyMedium?.copyWith(color: currentLocal==Locale("en")?
                         AppColors.Primary
                     :
+                    provider.appTheme==ThemeMode.dark?
+                    Colors.white
+                        :
                         Colors.black
                     )),
                     currentLocal==Locale("en")?
